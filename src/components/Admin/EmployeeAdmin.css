@@ -1,0 +1,68 @@
+.adminButtons {
+  display: flex;
+  justify-content: space-around;
+}
+.option {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+div > .option:nth-of-type(1) {
+  background-color: green;
+}
+
+div > .option:nth-of-type(2) {
+  background-color: blue;
+}
+
+div > .option:nth-of-type(3) {
+  background-color: red;
+}
+.redButton {
+  color: white;
+  background-color: red;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.blueButton {
+  color: white;
+  background-color: blue;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.greenButton {
+  color: white;
+  background-color: green;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.error-message {
+  color: red;
+}
+.success-message {
+  color: green;
+}
+.clearButton {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.labeltest {
+  color: red;
+  width: 200px;
+}

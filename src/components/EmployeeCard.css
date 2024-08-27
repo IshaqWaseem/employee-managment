@@ -1,0 +1,26 @@
+.employee-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.employee-card h2 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.employee-card p {
+  margin: 0;
+}
+
+.employee-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
