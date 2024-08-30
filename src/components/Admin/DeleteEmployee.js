@@ -4,15 +4,15 @@ import AdminSearch from "./AdminSearch";
 const DeleteEmployee = () => {
   const [employee, setEmployee] = useState({
     employeeId: 0,
-    firstName:"",
-    lastName:"",
+    firstName: "",
+    lastName: "",
   });
 
   const [showSearch, setShowSearch] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSearchSelect = (employeeId, firstName,lastName) => {
+  const handleSearchSelect = (employeeId, firstName, lastName) => {
     setEmployee((prevState) => ({
       ...prevState,
       employeeId: employeeId,
@@ -59,10 +59,10 @@ const DeleteEmployee = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "1em" }}>
       <h2>Delete Employee</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="employeeId">Employee:</label>
           <button
             className="blueButton"
@@ -73,6 +73,9 @@ const DeleteEmployee = () => {
               ? `Employee: ${employee.firstName}`
               : "Select Employee"}
           </button>
+        </div>
+        <div className="form-group">
+          {showSearch && <label>Search:</label>}
           {showSearch && <AdminSearch onSelect={handleSearchSelect} />}
         </div>
         <button className="redButton" type="submit">

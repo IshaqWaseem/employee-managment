@@ -127,12 +127,15 @@ const UpdateEmployee = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "1em" }}>
       <h2>Update Employee</h2>
-      <AdminSearch onSelect={handleEmployeeSearch} />
+      <div className="form-group">
+        <label>Employee:</label>
+        <AdminSearch onSelect={handleEmployeeSearch} />
+      </div>
 
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>First Name:</label>
           <input
             type="text"
@@ -144,7 +147,7 @@ const UpdateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Last Name:</label>
           <input
             type="text"
@@ -156,7 +159,7 @@ const UpdateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Position:</label>
           <input
             type="text"
@@ -167,12 +170,11 @@ const UpdateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="managerId">Manager:</label>
-          {showSearch && <AdminSearch onSelect={handleManagerSearch} />}
           <button
-            type="button"
             className="blueButton"
+            type="button"
             onClick={() => setShowSearch(!showSearch)}
           >
             {employeeData.managerId
@@ -189,7 +191,10 @@ const UpdateEmployee = () => {
             </button>
           ) : null}
         </div>
-
+        <div className="form-group">
+          {showSearch && <label>Search:</label>}
+          {showSearch && <AdminSearch onSelect={handleManagerSearch} />}
+        </div>
         <button className="greenButton" type="submit">
           Update Employee
         </button>

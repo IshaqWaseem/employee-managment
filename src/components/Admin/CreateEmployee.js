@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AdminSearch from "./AdminSearch";
+
 const CreateEmployee = () => {
   const [employee, setEmployee] = useState({
     employeeId: 0,
@@ -39,12 +40,14 @@ const CreateEmployee = () => {
     }));
     setShowSearch(false);
   };
+
   const clearManagerId = () => {
     setEmployee((prevState) => ({
       ...prevState,
       managerId: null,
     }));
   };
+
   const clearMessages = () => {
     setErrorMessage("");
     setSuccessMessage("");
@@ -86,10 +89,10 @@ const CreateEmployee = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "1em" }}>
       <h2>Create Employee</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
@@ -102,7 +105,7 @@ const CreateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
@@ -115,7 +118,7 @@ const CreateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="position">Position:</label>
           <input
             type="text"
@@ -127,7 +130,7 @@ const CreateEmployee = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="managerId">Manager:</label>
           <button
             className="blueButton"
@@ -138,7 +141,6 @@ const CreateEmployee = () => {
               ? `Manager: ${employee.managerName}`
               : "Select Manager"}
           </button>
-          {showSearch && <AdminSearch onSelect={handleSearchSelect} />}
           {employee.managerId ? (
             <button
               className="redButton"
@@ -149,19 +151,14 @@ const CreateEmployee = () => {
             </button>
           ) : null}
         </div>
+        <div className="form-group">
+          {showSearch && <label>Search:</label>}
+          {showSearch && <AdminSearch onSelect={handleSearchSelect} />}
+        </div>
         <button className="greenButton" type="submit">
           Add Employee
         </button>
       </form>
-      {errorMessage && (
-        <div className="error-message">
-          {errorMessage}
-
-          <button className="clearButton" onClick={clearMessages}>
-            &times;
-          </button>
-        </div>
-      )}
       {errorMessage && (
         <div className="error-message">
           {errorMessage}
