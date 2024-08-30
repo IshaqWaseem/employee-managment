@@ -30,7 +30,7 @@ const DeleteEmployee = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5287/api/Employees/${employee.employeeId}`,
+        `https://localhost:7217/api/Employees/${employee.employeeId}`,
         {
           method: "DELETE",
           headers: {

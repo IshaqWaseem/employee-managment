@@ -20,7 +20,7 @@ const AdminSearch = ({ onSelect }) => {
         setErrorMessage("");
         try {
           const response = await axios.get(
-            `http://localhost:5287/api/Employees/${searchTerm}/search`
+            `https://localhost:7217/api/Employees/${searchTerm}/search`
           );
           if (response.data.length > 0) {
             setSearchResults(response.data);

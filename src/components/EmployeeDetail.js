@@ -13,7 +13,7 @@ function EmployeeDetail() {
     const fetchEmployeeData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5287/api/Employees/${employeeId}`
+          `https://localhost:7217/api/Employees/${employeeId}`
         );
         setEmployeeData(response.data);
       } catch (error) {

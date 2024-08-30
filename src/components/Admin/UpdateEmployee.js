@@ -22,7 +22,7 @@ const UpdateEmployee = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5287/api/Employees/${selectedEmployeeId}`
+        `https://localhost:7217/api/Employees/${selectedEmployeeId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch employee data");
@@ -90,7 +90,7 @@ const UpdateEmployee = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5287/api/Employees/${employeeId}`,
+        `https://localhost:7217/api/Employees/${employeeId}`,
         {
           method: "PUT",
           headers: {

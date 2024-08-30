@@ -18,7 +18,7 @@ function EmployeeSearch() {
       if (searchTerm.length > 1) {
         try {
           const response = await axios.get(
-            `http://localhost:5287/api/Employees/${searchTerm}/search`
+            `https://localhost:7217/api/Employees/${searchTerm}/search`
           );
           setSearchResults(response.data);
         } catch (error) {

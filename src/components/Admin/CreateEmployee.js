@@ -57,7 +57,7 @@ const CreateEmployee = () => {
     e.preventDefault();
     const { managerName, ...payload } = employee;
     try {
-      const response = await fetch("http://localhost:5287/api/Employees", {
+      const response = await fetch("https://localhost:7217/api/Employees", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
